@@ -1,19 +1,13 @@
-const chessboard = document.querySelector("#chessboard");
+const chessboard = document.querySelector(".chessboard");
 
 const CHESSBOARD_SIZE = 8;
 
-for (let i = 0; i < CHESSBOARD_SIZE; i++) {
-  const row = document.createElement("tr");
+for (let i = 0; i < CHESSBOARD_SIZE * CHESSBOARD_SIZE; i++) {
+  const cell = document.createElement("div");
 
-  for (let j = 0; j < CHESSBOARD_SIZE; j++) {
-    const cell = document.createElement("td");
+  const isBlack = i % 2 === Math.floor(i / CHESSBOARD_SIZE) % 2;
 
-    const isBlack = (i + j) % 2 === 1;
+  cell.style.backgroundColor = isBlack ? "black" : "white";
 
-    cell.style.backgroundColor = isBlack ? "black" : "white";
-
-    row.appendChild(cell);
-  }
-
-  chessboard.appendChild(row);
+  chessboard.appendChild(cell);
 }

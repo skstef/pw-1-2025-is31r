@@ -47,3 +47,14 @@ td {
   font-size: 20px;
   font-weight: bold;
 }
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 25px);
+  grid-template-rows: repeat(8, 25px);
+}
+
+.chessboard div {
+  /* height: 15px;
+  width: 15px; */
+}
