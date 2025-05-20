@@ -11,6 +11,7 @@ function reverseArray(arr) {
   return arr.slice().reverse();
 }
 
+// Usage examples
 console.log("Usage examples for doubleArray:");
 console.log(doubleArray([1, 2, 3])); // Output: [2, 4, 6]
 

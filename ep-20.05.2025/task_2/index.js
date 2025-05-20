@@ -1,20 +1,28 @@
-/**
- * Checks if a number is prime.A prime number is a natural number greater than 1 that has no positive divisors
- * other than 1 and itself
- */
-
 function isPrime(n) {
-  // Numbers less than or equal to 1 are not prime
+  // Step 1: Eliminate numbers less than or equal to 1 (not prime by definition)
   if (n <= 1) return false;
 
-  // Check for divisibility from 2 to square root of n
-  for (let i = 2; i <= Math.sqrt(n); i++) {
+  // Step 2: Handle 2 explicitly (2 is the only even prime number)
+  if (n === 2) return true;
+
+  // Step 3: Eliminate all other even numbers greater than 2 (not prime)
+  if (n % 2 === 0) return false;
+
+  // Step 4: Only check for divisibility up to the square root of n
+  // No need to check beyond that, as factors repeat beyond sqrt(n)
+  const sqrtN = Math.sqrt(n);
+
+  // Step 5: Check for divisibility by odd numbers only (skip even numbers)
+  for (let i = 3; i <= sqrtN; i += 2) {
+    // If any number divides n exactly, it's not prime
     if (n % i === 0) return false;
   }
 
+  // Step 6: If no divisors found, number is prime
   return true;
 }
 
-console.log(isPrime(7)); // Output: true
-console.log(isPrime(10)); // Output: false
-console.log(isPrime(2)); // Output: true
+// Usage examples
+console.log(isPrime(7)); // true
+console.log(isPrime(10)); // false
+console.log(isPrime(2)); // true
