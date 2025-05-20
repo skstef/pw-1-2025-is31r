@@ -12,6 +12,7 @@ function getObjectEntries(obj) {
   return Object.entries(obj);
 }
 
+// Usage examples
 console.log("\nUsage examples for getObjectKeys:");
 console.log(getObjectKeys({ name: "Alice", age: 25 })); // Output: ['name', 'age']
 console.log(getObjectKeys({ a: 1, b: 2, c: 3 })); // Output: ['a', 'b', 'c']

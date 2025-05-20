@@ -1,3 +1,8 @@
+/**
+ * Checks if a number is prime.A prime number is a natural number greater than 1 that has no positive divisors
+ * other than 1 and itself
+ */
+
 function isPrime(n) {
   // Numbers less than or equal to 1 are not prime
   if (n <= 1) return false;
